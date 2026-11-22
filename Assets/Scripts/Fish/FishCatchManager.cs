@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// เมื่อจับปลาได้ (FishingLineTension.onFishCaught) จะสุ่มระดับความหายากตามน้ำหนักโอกาส
+/// เมื่อจับปลาได้ จะสุ่มระดับความหายากตามน้ำหนักโอกาส
 /// แล้วสุ่มชนิดปลาในระดับนั้น สุ่มน้ำหนัก และเก็บเข้ากระเป๋า
 /// </summary>
 public class FishCatchManager : MonoBehaviour
@@ -37,7 +37,7 @@ public class FishCatchManager : MonoBehaviour
     [SerializeField] private FishingLineTension lineTension;
     [SerializeField] private FishInventory inventory;
 
-    /// <summary>จับปลาได้: (ปลา, เก็บเข้ากระเป๋าได้หรือไม่)</summary>
+    /// <summary> จับปลาได้ : (ปลา, เก็บเข้ากระเป๋าได้หรือไม่) </summary>
     public event Action<CaughtFish, bool> FishCaught;
 
     public FishInventory Inventory => inventory;
@@ -58,7 +58,7 @@ public class FishCatchManager : MonoBehaviour
         if (lineTension != null) lineTension.onFishCaught.RemoveListener(CatchRandomFish);
     }
 
-    /// <summary>สุ่มปลาหนึ่งตัวแล้วเก็บเข้ากระเป๋า</summary>
+    /// <summary> สุ่มปลาหนึ่งตัวแล้วเก็บเข้ากระเป๋า </summary>
     public void CatchRandomFish()
     {
         FishData data = RollFish();
@@ -75,7 +75,7 @@ public class FishCatchManager : MonoBehaviour
         FishCaught?.Invoke(caught, added);
     }
 
-    /// <summary>สุ่มระดับความหายาก (เฉพาะระดับที่มีปลาอยู่จริง) แล้วสุ่มชนิดในระดับนั้น</summary>
+    /// <summary> สุ่มระดับความหายาก (เฉพาะระดับที่มีปลาอยู่จริง) แล้วสุ่มชนิดในระดับนั้น </summary>
     public FishData RollFish()
     {
         float total = 0f;
@@ -94,7 +94,7 @@ public class FishCatchManager : MonoBehaviour
         return RandomFrom(fishPool);
     }
 
-    /// <summary>โอกาสจริงของแต่ละระดับ (%) หลังตัดระดับที่ไม่มีปลาออก</summary>
+    /// <summary> โอกาสจริงของแต่ละระดับ (%) หลังตัดระดับที่ไม่มีปลาออก </summary>
     public float ChancePercent(FishRarity rarity)
     {
         float total = 0f, mine = 0f;

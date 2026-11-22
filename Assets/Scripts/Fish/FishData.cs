@@ -49,7 +49,7 @@ public class FishData : ScriptableObject
     public float MaxWeight => maxWeight;
     public GameObject Model => model;
 
-    /// <summary>สุ่มน้ำหนัก ตัวเล็กเจอบ่อยกว่าตัวใหญ่ ปัดเป็นทศนิยม 2 ตำแหน่ง</summary>
+    /// <summary>สุ่มน้ำหนัก ตัวเล็กเจอบ่อยกว่าตัวใหญ่</summary>
     public float RollWeight() => WeightAt(Random.value);
 
     private void OnValidate()

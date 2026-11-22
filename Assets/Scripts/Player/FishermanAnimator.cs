@@ -30,7 +30,7 @@ public class FishermanAnimator : MonoBehaviour
     private float holdSwingDefault;
     private bool holdingRod = true;
 
-    /// <summary> สลับท่าแขนขวา: ถือคันเบ็ด หรือแขนว่าง (ตอนเก็บคันไว้ที่หลัง)</summary>
+    /// <summary> สลับท่าแขนขวา: ถือคันเบ็ด หรือแขนว่าง (ตอนเก็บคันไว้ที่หลัง) </summary>
     public void SetHoldingRod(bool holding) => holdingRod = holding;
 
     private void Awake()

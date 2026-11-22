@@ -56,7 +56,7 @@ public class FishingRodCaster : MonoBehaviour
     private float currentReelSpeed;
     private FishingLineTension lineTension;
 
-    /// <summary>พลังปัจจุบัน 0-1 (เอาไปใช้กับ UI แถบพลังได้)</summary>
+    /// <summary> พลังปัจจุบัน 0-1 (เอาไปใช้กับ UI แถบพลังได้) </summary>
     public float ChargePercent => isCharging ? chargeCurve.Evaluate(Mathf.Clamp01(chargeTimer / maxChargeTime)) : 0f;
     public bool IsCharging => isCharging;
     public Rigidbody CurrentBobber => currentBobber;
